@@ -38,7 +38,6 @@
             }"
             @dblclick="editTodo(todo)"
           >
-            <!-- class="md-layout md-gutter md-alignment-center" -->
             <div class="display">{{ todo.label }}</div>
             <md-checkbox type="checkbox" v-model="todo.completed"></md-checkbox>
             <MdInput type="checkbox" v-model="todo.completed" />
@@ -62,8 +61,7 @@
               EDIT
             </MdButton>
 
-            <MdButton class="md-primary" @click="removeTodo(todo)"
-              ><!-- &times -->
+            <MdButton class="md-primary" @click="removeTodo(todo)">
               X
             </MdButton>
           </li>
@@ -109,7 +107,7 @@
     </div>
   </MdContent>
 </template>
-
+ 
 <script>
 import Vue from "vue";
 
@@ -199,12 +197,12 @@ export default Vue.extend({
     },
 
     /*updateTodo(todo) {
-      this.editedTodoID = todo.id;
-    },*/
+     this.editedTodoID = todo.id;
+   },*/
 
     /*saveUpdate() {
-      this.editedTodoID = null;
-    },*/
+     this.editedTodoID = null;
+   },*/
   },
   directives: {
     "todo-html-focus": function (element, binding) {
@@ -215,7 +213,7 @@ export default Vue.extend({
   },
 });
 </script>
-
+ 
 <style scoped>
 .body {
   background-color: #f5f5f5;
