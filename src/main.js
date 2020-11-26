@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueMaterial from 'vue-material'
-import { MdCard } from 'vue-material/dist/components';
+import { MdContent, MdCard, MdButton } from 'vue-material/dist/components';
 
 Vue.use(VueMaterial)
+Vue.use(MdContent);
 Vue.use(MdCard);
+Vue.use(MdButton);
+// MdTitle breaks
+
 //Vue.use(MdCardFooter);
 
 Vue.config.productionTip = false

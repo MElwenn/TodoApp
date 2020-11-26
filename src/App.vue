@@ -1,27 +1,27 @@
-<template class="body">
-  <MdContent>
-    <div class="page-container">
-      <div id="todo-items-list">
+<template >
+  <MdContent class="body">
+    <div>
+      <MdCard id="todo-items-list">
         <h1 class="md-title">My todos</h1>
-      </div>
+      </MdCard>
 
       <!-- Add ToDo -->
-      <md-card-content class="add-item-form">
-        <md-field>
-          <md-input
+      <MdCardContent class="add-item-form">
+        <MdField>
+          <MdInput
             v-model="currentTodo"
             @keydown.enter="addTodo()"
             placeholder="Add a todo"
-          ></md-input>
+          ></MdInput>
           <p data-v-6de59b62="" contenteditable="true" class="title"></p>
           <MdButton class="md-primary md-raised" @click.prevent="addTodo()">
             ADD
           </MdButton>
-        </md-field>
-      </md-card-content>
+        </MdField>
+      </MdCardContent>
 
       <!-- Display list of added ToDos -->
-      <md-card-content class="add-item-form">
+      <MdCardContent class="add-item-form">
         <ul
           list-style="none"
           display="inline-block"
@@ -41,7 +41,7 @@
             <!-- class="md-layout md-gutter md-alignment-center" -->
             <div class="display">{{ todo.label }}</div>
             <md-checkbox type="checkbox" v-model="todo.completed"></md-checkbox>
-            <input type="checkbox" v-model="todo.completed" />
+            <MdInput type="checkbox" v-model="todo.completed" />
             <span
               v-on:click.stop.prevent="updateTodo(todo)"
               v-show="editedTodoID !== todo.id"
@@ -49,7 +49,7 @@
             >
             </span>
 
-            <input
+            <MdInput
               class="edit"
               v-model="todo.label"
               v-todo-html-focus="todo == editedTodo"
@@ -69,7 +69,7 @@
           </li>
         </ul>
 
-        <md-field>
+        <MdField>
           <div class="items-left">{{ completed }} items left</div>
           <div class="static">
             <div
@@ -104,13 +104,11 @@
           >
             Clear completed
           </div>
-        </md-field>
-      </md-card-content>
+        </MdField>
+      </MdCardContent>
     </div>
   </MdContent>
 </template>
-
-
 
 <script>
 import Vue from "vue";
@@ -223,6 +221,8 @@ export default Vue.extend({
   background-color: #f5f5f5;
   text-decoration: none;
   list-style-type: "none";
+  font-family: sans-serif;
+  color: #333333;
 }
 .display {
   display: inline-flex;
